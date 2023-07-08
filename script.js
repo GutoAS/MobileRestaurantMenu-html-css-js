@@ -10,6 +10,12 @@ document.addEventListener("click", (e) => {
   if (e.target.dataset.remove) {
     handleRemoveClick(e.target.dataset.remove);
   }
+  if (e.target.id === "completeOrderBtn") {
+    handleCompleteOrderBtnClick();
+  }
+  if (e.target.id === "payButton") {
+    handlePayButtonClick();
+  }
 });
 
 function handlePlusButtonClick(id) {
@@ -31,6 +37,10 @@ function handleRemoveClick(id) {
     document.getElementById("orderListEl").classList.add("display-none");
   }
   render();
+}
+
+function handleCompleteOrderBtnClick() {
+  document.getElementById("cardEl").classList.remove("display-none");
 }
 
 function getMenuItems() {
