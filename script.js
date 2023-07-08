@@ -1,6 +1,9 @@
 import { menuArray } from "./data.js";
 import { v4 as uuidv4 } from "https://jspm.dev/uuid";
 
+const cardEl = document.getElementById("cardEl");
+const promptEl = document.getElementById("promptEl");
+
 const orders = [];
 
 document.addEventListener("click", (e) => {
@@ -13,9 +16,14 @@ document.addEventListener("click", (e) => {
   if (e.target.id === "completeOrderBtn") {
     handleCompleteOrderBtnClick();
   }
-  if (e.target.id === "payButton") {
-    handlePayButtonClick();
-  }
+});
+
+document.getElementById("cardEl").addEventListener("submit", (e) => {
+  e.preventDefault();
+  cardEl.classList.add("display-none");
+  promptEl.classList.remove("display-none");
+  document.getElementById("orderListEl").classList.add("display-none");
+  orders.splice(0, orders.length);
 });
 
 function handlePlusButtonClick(id) {
@@ -40,7 +48,7 @@ function handleRemoveClick(id) {
 }
 
 function handleCompleteOrderBtnClick() {
-  document.getElementById("cardEl").classList.remove("display-none");
+  cardEl.classList.remove("display-none");
 }
 
 function getMenuItems() {
@@ -91,6 +99,7 @@ function render() {
   document.getElementById("itemsEl").innerHTML = getMenuItems();
   document.getElementById("ordersItemsEl").innerHTML = getOrders();
   document.getElementById("orderTotalPriceEl").innerHTML = getTotalPrice();
+  promptEl.classList.add("display-none");
 }
 
 render();
