@@ -9,7 +9,7 @@ This is a solution to the [Restaurant-Ordering-App]. Scrimba Pro challenges help
   - [Screenshot](#screenshot)
   - [Links](#links)
 - [My process](#my-process)
-  - [Built with](#built-with)S
+  - [Built with](#built-with)
 
 ## Overview
 
@@ -31,7 +31,7 @@ Requirements:
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://interactivecommentsguto.netlify.app/)
+- Live Site URL: [Clicke here](https://rainbow-gaufre-ef630a.netlify.app/)
 
 ## My process
 
