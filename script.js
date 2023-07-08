@@ -34,11 +34,20 @@ document.getElementById("cardEl").addEventListener("submit", (e) => {
 
 function handlePlusButtonClick(id) {
   const exactItem = menuArray.find((item) => item.id == id);
-  orders.push({
-    id: uuidv4(),
-    name: exactItem.name,
-    price: exactItem.price,
-  });
+  const discountItem = orders.find((order) => order.name === exactItem.name);
+  if (discountItem) {
+    orders.push({
+      id: uuidv4(),
+      name: exactItem.name,
+      price: exactItem.price / 2,
+    });
+  } else {
+    orders.push({
+      id: uuidv4(),
+      name: exactItem.name,
+      price: exactItem.price,
+    });
+  }
   orderListEl.classList.remove("display-none");
   render();
 }
@@ -104,7 +113,8 @@ function getTotalPrice() {
 function render() {
   document.getElementById("itemsEl").innerHTML = getMenuItems();
   document.getElementById("ordersItemsEl").innerHTML = getOrders();
-  document.getElementById("orderTotalPriceEl").innerHTML = getTotalPrice();
+  document.getElementById("orderTotalPriceEl").innerHTML =
+    "$" + getTotalPrice();
   promptEl.classList.add("display-none");
 }
 
