@@ -1,6 +1,6 @@
 # Scrimba - Restaurant Ordering App
 
-This is a solution to the [Restaurant-Ordering-App]. Scrimba Pro challenges help you improve your coding skills by building realistic projects.
+This is a solution to the Restaurant Ordering App. Scrimba Pro challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
