@@ -77,15 +77,20 @@
           <button id="completeOrderBtn">Complete order</button>
         </div>
         <div class="prompt display-none" id="promptEl">
-          <p>Thanks, James! Your order is on its way!</p>
+          <p>Thanks, <span id="formNameEl"></span> Your order is on its way!</p>
         </div>
       </div>
     </div>
     <form class="card display-none" id="cardEl">
       <h2 class="card-title">Enter card details</h2>
-      <input type="text" placeholder="Enter your name" required />
-      <input type="number" required placeholder="Enter card number" />
-      <input type="number" placeholder="Enter CVV" required />
+      <input type="text" name="name" placeholder="Enter your name" required />
+      <input
+        type="number"
+        name="card number"
+        required
+        placeholder="Enter card number"
+      />
+      <input type="number" name="cvv" placeholder="Enter CVV" required />
       <button type="submit">Pay</button>
     </form>
     <script type="module" src="script.js"></script>

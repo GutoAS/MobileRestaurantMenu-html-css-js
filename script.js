@@ -21,6 +21,11 @@ document.addEventListener("click", (e) => {
 
 document.getElementById("cardEl").addEventListener("submit", (e) => {
   e.preventDefault();
+
+  const formData = new FormData(cardEl);
+  const name = formData.get("name");
+  document.getElementById("formNameEl").innerHTML = name;
+
   cardEl.classList.add("display-none");
   promptEl.classList.remove("display-none");
   orderListEl.classList.add("display-none");
