@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from "https://jspm.dev/uuid";
 
 const cardEl = document.getElementById("cardEl");
 const promptEl = document.getElementById("promptEl");
+const orderListEl = document.getElementById("orderListEl");
 
 const orders = [];
 
@@ -22,7 +23,7 @@ document.getElementById("cardEl").addEventListener("submit", (e) => {
   e.preventDefault();
   cardEl.classList.add("display-none");
   promptEl.classList.remove("display-none");
-  document.getElementById("orderListEl").classList.add("display-none");
+  orderListEl.classList.add("display-none");
   orders.splice(0, orders.length);
 });
 
@@ -33,7 +34,7 @@ function handlePlusButtonClick(id) {
     name: exactItem.name,
     price: exactItem.price,
   });
-  document.getElementById("orderListEl").classList.remove("display-none");
+  orderListEl.classList.remove("display-none");
   render();
 }
 
@@ -42,7 +43,7 @@ function handleRemoveClick(id) {
   const index = orders.indexOf(exactOrder);
   orders.splice(index, 1);
   if (orders.length === 0) {
-    document.getElementById("orderListEl").classList.add("display-none");
+    orderListEl.classList.add("display-none");
   }
   render();
 }
