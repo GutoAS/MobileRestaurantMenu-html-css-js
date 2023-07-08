@@ -19,6 +19,7 @@ function handlePlusButtonClick(id) {
     name: exactItem.name,
     price: exactItem.price,
   });
+  document.getElementById("orderListEl").classList.remove("display-none");
   render();
 }
 
@@ -26,6 +27,9 @@ function handleRemoveClick(id) {
   const exactOrder = orders.find((order) => order.id == id);
   const index = orders.indexOf(exactOrder);
   orders.splice(index, 1);
+  if (orders.length === 0) {
+    document.getElementById("orderListEl").classList.add("display-none");
+  }
   render();
 }
 
@@ -66,7 +70,7 @@ function getOrders() {
 
 function render() {
   document.getElementById("itemsEl").innerHTML = getMenuItems();
-  document.getElementById("ordersEl").innerHTML = getOrders();
+  document.getElementById("ordersItemsEl").innerHTML = getOrders();
 }
 
 render();

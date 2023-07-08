@@ -1,6 +1,12 @@
 body {
   font-family: "Smythe", cursive;
   background-color: whitesmoke;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 
 header {
@@ -219,4 +225,8 @@ input[type="number"] {
   font-size: 32px;
   line-height: 16.8px;
   margin-top: 20px;
+}
+
+.display-none {
+  display: none;
 }
