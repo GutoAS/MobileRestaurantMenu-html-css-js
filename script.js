@@ -65,12 +65,22 @@ function getOrders() {
       </div>
         `;
   });
+
   return orderHtml;
+}
+
+function getTotalPrice() {
+  let orderTotalPrice = 0;
+  orders.forEach((order) => {
+    orderTotalPrice += order.price;
+  });
+  return orderTotalPrice;
 }
 
 function render() {
   document.getElementById("itemsEl").innerHTML = getMenuItems();
   document.getElementById("ordersItemsEl").innerHTML = getOrders();
+  document.getElementById("orderTotalPriceEl").innerHTML = getTotalPrice();
 }
 
 render();
