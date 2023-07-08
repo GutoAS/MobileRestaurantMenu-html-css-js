@@ -31,7 +31,7 @@ Requirements:
 
 ### Links
 
-- Live Site URL: [Clicke here](https://rainbow-gaufre-ef630a.netlify.app/)
+- Live Site URL: [Click here](https://rainbow-gaufre-ef630a.netlify.app/)
 
 ## My process
 
